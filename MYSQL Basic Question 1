@@ -1,0 +1,25 @@
+							----Assignment 1 of Mysql basics----
+										-Arijit Acharya
+										
+										
+//Creating tables for the ipl fixture
+
+											
+		CREATE Table Match_details(
+		    match_serial_no INTEGER PRIMARY KEY,
+		    date_of_match DATE,
+		    team1 VARCHAR(100),
+		    team2 VARCHAR(100),
+		    venue VARCHAR(50),
+		    toss_details VARCHAR(100),
+		    match_won VARCHAR(100)
+		    
+		);
+
+		CREATE TABLE Team(  
+		   Team_name VARCHAR(100) PRIMARY KEY, 
+		   Captain_name VARCHAR(50), 
+		   match_serial_no INTEGER ,
+		   Foreign Key (match_serial_no) REFERENCES Match_details(match_serial_no)
+		);
+		
